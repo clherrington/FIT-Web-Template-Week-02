@@ -7,8 +7,23 @@
       The user will enter a long string of text, then on button click, the code will search the long string for a keyword and print everything after the keyword to a p tag. 
       (You may use "skeleton" as the keyword if you can't think of anything else.)</h4>
     <!-- Place Answer Here -->
+  
+    <label for ='bwinput'>Brainwashed Input:</label>
+    <input id="bwinput">
+    <p id="bwdisplay"></p>
+    
 
-      
+      <button id="bwbutton" onClick="bwactivate( document.getElementById('bwinput').value)">Brainwasher</button>
+
+    <script>
+    
+    function bwactivate(input)
+    {
+      var bwindex= input.indexOf("lass");
+      document.getElementById("bwdisplay").innerHTML = input.substring(bwindex, bwinput.length);
+    }
+    
+    </script>
 
     <!-- Place Answer Here -->
   </div>
@@ -22,6 +37,13 @@
         while another input and button will be responsible for entering how many of that item is stored. 
         (Hint two arrays or a 2 dimensional array is needed)</h4>
     <!-- Place Answer Here -->
+      <p id="IIdisplay"></p>
+
+      <script>
+      
+      var II = ['Healing Potion', 'Arrow', 'Ressurection Scroll', 'Gold'], [5, 32, 3, '2,000']
+      
+      </script>
       
 
 
