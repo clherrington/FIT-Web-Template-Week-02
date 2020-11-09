@@ -37,12 +37,34 @@
         while another input and button will be responsible for entering how many of that item is stored. 
         (Hint two arrays or a 2 dimensional array is needed)</h4>
     <!-- Place Answer Here -->
+      <label for ='IIinput'>Inventory Item:</label>
+      <input id="IIinput">
+        <button id="iibutton" onClick="iiactivate( document.getElementById('IIinput').value)">Search</button>
+  
+      <label for ='IIinput2'>Quantity:</label>
+      <input id="IIinput2">
+        <button id="iibutton2" onClick="iiactivate2( document.getElementById('IIinput2').value)">Update Quantity</button>
+      
       <p id="IIdisplay"></p>
-
+      
       <script>
       
-      var II = ['Healing Potion', 'Arrow', 'Ressurection Scroll', 'Gold'], [5, 32, 3, '2,000']
-      
+      var II = [ ['Healing Potion', 'Arrow', 'Ressurection Scroll', 'Gold'], [5, 32, 3, '2,000'] ];
+
+      var storedInput; 
+
+
+      function iiactivate(input)
+      {
+        document.getElementById("IIdisplay").innerHTML = II[0][input] +": " + II[1][input];
+        storedInput = input;
+      }
+
+      function iiactivate2(input)
+      {
+        II[1][storedInput] = input;
+        document.getElementById("IIdisplay").innerHTML = II[0][storedInput] + ": " +II[1][storedInput];
+      }
       </script>
       
 
