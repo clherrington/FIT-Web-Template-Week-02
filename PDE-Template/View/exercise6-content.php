@@ -6,7 +6,45 @@
     <h4>Create a dice class that holds an int attribute for the number of sides it has, and a roll function that rolls the dice and returns the outcome. 
       Add the elements and script needed so that a user can enter a number of sides and a number of times to roll; display on a button click.</h4>
     <!-- Place Answer Here -->
-      
+    
+    
+    <input id="input1">
+    <input id="input2">
+    <button id="roll" onClick="rolling( document.getElementById('input1').value, document.getElementById('input2').value)">Roll</button>
+    <p id="dice"></p>
+
+    
+    <script>
+    
+      class Dice
+      {
+        constructor(dice, sides)
+        {
+          this.die = dice;
+          this.side = sides;
+        }
+        rollthedice()
+        {
+          var rando = Math.floor(Math.random() * this.side) + 1;
+          return rando;
+        }
+      }
+    
+    var loop;
+    
+    
+    function rolling(input1, input2) 
+    {
+      var myLuckyDie = new Dice(input1, input2);
+      var strDisplay = "";
+      for (loop = 0; loop < input1; loop++)
+      {
+        document.getElementById("dice").innerHTML = strDisplay += " " + myLuckyDie.rollthedice();
+        
+      }
+    }
+
+    </script>
       
 
     <!-- Place Answer Here -->
