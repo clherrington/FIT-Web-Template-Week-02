@@ -19,19 +19,33 @@
       <?php
         //creature array (Name, Challenge rating, armor class, hp, speed, actions)
         $creatureList = array (
-          array("Owlbear", "3 (700 XP)", "13 (Natural Armor)", "59 (7d10 + 21)", "40 ft.", "Multiattack, Beak, Claws"),
-          array("Shambling Mound", "5 (1,800 XP)", "15 (Natural Armor)", "136 (16d10 + 48)", "20 ft., swim 20 ft.", "Multiattack, Slam, Engulf"),
-          array("Aboleth", "10 (5,900 XP)", "17 (Natural Armor)", "135 (18d10 + 36)", "10 ft., swim 40 ft.", "Multiattack, Tentacle, Tail, Enslave (3/day), Legendary Action"),
-          array("Beholder", "13 (10,000 XP)", "18 (natural armor)", "189 (19d10 + 76)", "0 ft., fly 20 ft. (hover)", "Bite, Eye Rays, Legendary Action"),
-          array("Tarrasque", "30 (155,000 XP)", "25 (Natural Armor)", "676 (33d20 + 330)", "40 ft.", "Multiattack, Claw, Horns, Tail, Frightful Presence, Swallow, Legendary Action"),
+          array("Name"=>"Owlbear", "Challenge Rating"=>"3 (700 XP)", "Armour Class"=>"13 (Natural Armor)", "hp"=>"59 (7d10 + 21)", "speed"=>"40 ft.", "actions"=>"Multiattack, Beak, Claws"),
+          array("Name"=>"Shambling Mound", "Challenge Rating"=>"5 (1,800 XP)", "Armour Class"=>"15 (Natural Armor)", "hp"=>"136 (16d10 + 48)", "speed"=>"20 ft., swim 20 ft.", "actions"=>"Multiattack, Slam, Engulf"),
+          array("Name"=>"Aboleth", "Challenge Rating"=>"10 (5,900 XP)", "Armour Class"=>"17 (Natural Armor)", "hp"=>"135 (18d10 + 36)", "speed"=>"10 ft., swim 40 ft.", "actions"=>"Multiattack, Tentacle, Tail, Enslave (3/day), Legendary Action"),
+          array("Name"=>"Beholder", "Challenge Rating"=>"13 (10,000 XP)", "Armour Class"=>"18 (natural armor)", "hp"=>"189 (19d10 + 76)", "speed"=>"0 ft., fly 20 ft. (hover)", "Bite, Eye Rays, Legendary Action"),
+          array("Name"=>"Tarrasque", "Challenge Rating"=>"30 (155,000 XP)", "Armour Class"=>"25 (Natural Armor)", "hp"=>"676 (33d20 + 330)", "speed"=>"40 ft.", "actions"=>"Multiattack, Claw, Horns, Tail, Frightful Presence, Swallow, Legendary Action"),
           //array("Three Kobolds in a Trenchcoat", "1 (200 XP)", "12", "15 (6d6 - 6)", "30 ft.", "Multiattack, Dagger, Sling")
         );
       ?>
     <!-- /Given Material -->
 
     <!-- Place Answer Here -->
-
-    
+    <?php if (count($creatureList) > 0): ?>
+<table>
+  <thead>
+    <tr>
+      <th><?php echo implode('</th><th>', array_keys(current($creatureList))); ?></th>
+    </tr>
+  </thead>
+  <tbody>
+<?php foreach ($creatureList as $row): array_map('htmlentities', $row); ?>
+    <tr>
+      <td><?php echo implode('</td><td>', $row); ?></td>
+    </tr>
+<?php endforeach; ?>
+  </tbody>
+</table>
+<?php endif; ?>
 
     <!-- Place Answer Here -->
   </div>
